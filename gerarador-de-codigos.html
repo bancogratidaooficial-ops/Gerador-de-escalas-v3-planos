@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GERADOR CÓDIGOS - PRIVADO</title>
+<style>body{background:#000;color:#fff;font-family:Arial;padding:15px}.box{background:#111;border:2px solid #ffcc00;border-radius:12px;padding:15px;max-width:400px;margin:auto} input,select,button{width:100%;padding:12px;margin:6px 0;border-radius:8px;border:1px solid #333} button{background:#ffcc00;font-weight:900;border:0;cursor:pointer}.code{background:#222;padding:12px;border-radius:8px;font-weight:900;color:#00e676;text-align:center;font-size:18px;letter-spacing:1px;word-break:break-all}</style></head><body>
+<div class="box">
+<h2 style="color:#ffcc00;text-align:center">🔑 GERADOR DE CÓDIGOS - GRATIFLIX</h2>
+<p style="font-size:11px;color:#aaa">Use após confirmar PIX na chave 025.446.319-37</p>
+<label>Plano pago:</label>
+<select id="plano"><option value="1">1 DIA - R$2,99</option><option value="7">1 SEMANA - R$10,00</option><option value="30" selected>1 MÊS - R$28,00</option><option value="365">1 ANO - R$300,00</option></select>
+<button onclick="gerar()">GERAR CÓDIGO DESBLOQUEIO</button>
+<div id="resultado" class="code" style="display:none"></div>
+<button id="btnCopy" style="display:none;background:#00c853;color:#fff" onclick="copiar()">📋 COPIAR E ENVIAR NO ZAP</button>
+</div>
+<script>
+const SEGREDO="GRATIDAO41_BANCO_2026";
+function gerarHash(s){let h=0;for(let i=0;i<s.length;i++){h=((h<<5)-h)+s.charCodeAt(i);h|=0;}return Math.abs(h).toString(36).toUpperCase()}
+function gerar(){let dias=parseInt(document.getElementById('plano').value); let exp=Date.now()+(dias*24*60*60*1000); let base=dias+"|"+exp; let hash=gerarHash(base+"|"+SEGREDO).substring(0,6); let code="GRATI-"+dias+"-"+exp.toString(36).toUpperCase()+"-"+hash; document.getElementById('resultado').style.display='block'; document.getElementById('resultado').innerText=code; document.getElementById('btnCopy').style.display='block'; localStorage.setItem('ultimoCodigo',code)}
+function copiar(){let c=document.getElementById('resultado').innerText; navigator.clipboard.writeText(c); alert("Código copiado: "+c+"\nAgora envie para o cliente!")}
+</script></body></html>
