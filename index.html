@@ -127,10 +127,17 @@ function exemplo(){let lista=[{id:1,nome:"Jose Marcos",hmin:"10:00",hmout:"19:00
 function limparTudo(){if(confirm("Limpar tudo?")){localStorage.removeItem(KEY_LISTA);renderLista();document.querySelector('#tab tbody').innerHTML='';}}
 let travaSalva=JSON.parse(localStorage.getItem(KEY_TRAVA)||'null');if(travaSalva){document.getElementById('dataInicio').value=travaSalva.data;}
      window.abrirPaywallManual = function(){
+   window.abrirPaywallManual = function(){
   var p = document.getElementById('bloqueioPaywall');
-  if(p){ p.style.display='flex'; p.style.alignItems='center'; p.style.justifyContent='center'; }
+  if(p){ 
+    p.style.display='flex'; 
+    p.style.alignItems='center'; 
+    p.style.justifyContent='center'; 
+  }
   var m = document.getElementById('msgBloqueio');
-  if(m){ m.innerText = "Escolha um plano. PIX: 025.446.319-37. Após pagar, envie comprovante no Zap (41) 99893-6718 e cole o código GRATI-... aqui."; }
+  if(m){ 
+    m.innerText = "Escolha um plano. PIX: 025.446.319-37. Apos pagar, envie comprovante no Zap (41) 99893-6718 e cole o codigo GRATI-... aqui."; 
+  }
 };
 window.fecharPaywall = function(){
   if(verificarBloqueio()){
@@ -139,7 +146,9 @@ window.fecharPaywall = function(){
   }
   document.getElementById('bloqueioPaywall').style.display='none';
 };
-renderFuncionarios(); 
+renderFuncionarios();
+renderLista();
+setTimeout(mostrarBloqueio,800);
 renderLista(); 
 setTimeout(mostrarBloqueio,800);
 console.log("Botao planos OK");            
