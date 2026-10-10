@@ -21,7 +21,8 @@ table{width:100%;border-collapse:collapse;font-size:11px;margin-top:10px}th{back
 .func-chip{background:#000;color:#ffcc00;padding:6px 10px;border-radius:20px;font-size:12px;font-weight:800;display:inline-flex;gap:6px;margin:3px;align-items:center}
 .func-chip b{background:#ff4444;color:#fff;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;cursor:pointer}
 </style>
-</head>
+</head><link rel="manifest" href="manifest.json">
+<script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js')}</script>
 <body>
 
 <div id="bloqueioPaywall" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.97);z-index:10000;padding:15px;align-items:center;justify-content:center;overflow:auto">
