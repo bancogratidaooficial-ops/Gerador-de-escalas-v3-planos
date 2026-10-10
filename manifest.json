@@ -1,16 +1,16 @@
 {
-  "name": "Gerador de Escalas 5x1 - Gratflix",
+  "name": "Escala 5x1 - 3 Dias Grátis",
   "short_name": "Escala 5x1",
-  "description": "Gerador de escala 5x1 automático - 3 dias grátis",
-  "start_url": "/Gerador-de-escalas-v3-planos/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#ffcc00",
   "icons": [
     {
-      "src": "https://cdn-icons-png.flaticon.com/512/3652/3652191.png",
+      "src": "icone.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
